@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ using UnityEngine;
 /// <summary>
 ///背包模块控制器.
 /// </summary>
-public class InventoryPanelController : MonoBehaviour {
+public class InventoryPanelController : MonoBehaviour,IUIPanelShowHide {
 
     public static InventoryPanelController Instance;//通过单例传递数据
 
@@ -102,4 +103,13 @@ public class InventoryPanelController : MonoBehaviour {
         CraftingPanelController.Instance.DragMaterialsItem(item);
     }
 
+    public void IUIPanelShow()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void IUIPanelHide()
+    {
+        gameObject.SetActive(false);
+    }
 }

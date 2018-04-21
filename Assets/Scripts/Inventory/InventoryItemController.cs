@@ -68,7 +68,7 @@ public class InventoryItemController : MonoBehaviour,IBeginDragHandler,IDragHand
         m_Text = m_RectTransform.Find("Num").GetComponent<Text>();
 
         gameObject.name = "InventoryItem";
-        parent = GameObject.Find("InventoryPanel").GetComponent<Transform>();
+        parent = GameObject.Find("Canvas").GetComponent<Transform>();
     }
 
 

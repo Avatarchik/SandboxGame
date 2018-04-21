@@ -82,6 +82,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Const\GameConst.cs" />
     <Compile Include="Assets\Scripts\Crafting\CraftingContentController.cs" />
     <Compile Include="Assets\Scripts\Crafting\CraftingContentItem.cs" />
     <Compile Include="Assets\Scripts\Crafting\CraftingContentItemController.cs" />
@@ -98,8 +99,14 @@
     <Compile Include="Assets\Scripts\Inventory\InventoryPanelController.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryPanelModel.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryPanelView.cs" />
+    <Compile Include="Assets\Scripts\Manager\InputManager.cs" />
+    <Compile Include="Assets\Scripts\ToolBar\ToolBarPanelController.cs" />
+    <Compile Include="Assets\Scripts\ToolBar\ToolBarPanelModel.cs" />
+    <Compile Include="Assets\Scripts\ToolBar\ToolBarPanelView.cs" />
+    <Compile Include="Assets\Scripts\ToolBar\ToolBarSlotController.cs" />
     <Compile Include="Assets\Scripts\Tools\JsonTools.cs" />
     <Compile Include="Assets\Scripts\Tools\ResourcesTools.cs" />
+    <Compile Include="Assets\Scripts\UIInterface\UIPanelShowHide.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\JsonData\CraftingContentsJsonData.txt" />

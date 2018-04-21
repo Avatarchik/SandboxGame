@@ -21,6 +21,7 @@ public class CraftingContentController : MonoBehaviour
         CreateAllItems(prefab, strList);
     }
 
+    
     private void CreateAllItems(GameObject prefab, List<CraftingContentItem> strList)
     {
         for (int i = 0; i < strList.Count; i++)
