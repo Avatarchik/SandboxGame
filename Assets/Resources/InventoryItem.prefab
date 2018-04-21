@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 222336766238515374}
   - component: {fileID: 114127989819096394}
   - component: {fileID: 114028710099560844}
+  - component: {fileID: 225611184438854934}
   m_Layer: 5
   m_Name: InventoryItem
-  m_TagString: Untagged
+  m_TagString: InventoryItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,3 +167,14 @@ RectTransform:
   m_AnchoredPosition: {x: -80, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!225 &225611184438854934
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1334798737406408}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

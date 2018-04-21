@@ -8,17 +8,60 @@ public class CraftingContentItemController : MonoBehaviour {
 
     private Transform m_Transform;
     private Text m_Text;
+    private Button m_Button;
+    private GameObject m_BG;
+
+
+    private int id;
+    private string name;
+    
+    public int Id
+    {
+        get { return id; }
+    }
 
     void Awake()
     {
         m_Transform = gameObject.GetComponent<Transform>();
+
+        m_Button = gameObject.GetComponent<Button>();
+        
+        m_BG = m_Transform.Find("BG").gameObject;
+
+        m_BG.SetActive(false);
         m_Text = m_Transform.Find("Text").GetComponent<Text>();
+        m_Button.onClick.AddListener(ItemButtonClick);
     }
 
 
-    public void Init(string name)
+    public void Init(CraftingContentItem item)
     {
+        this.id = item.ItemID;
+        this.name = item.ItemName;
+        gameObject.name = "Item" + id;
         m_Text.text = "  " + name;
     }
 
+    /// <summary>
+    /// 默认状态.
+    /// </summary>
+    public void NormalItem()
+    {
+        m_BG.SetActive(false);
+    }
+
+    /// <summary>
+    /// 激活状态.
+    /// </summary>
+    public void ActiveItem()
+    {
+        m_BG.SetActive(true);
+    }
+
+
+    private void ItemButtonClick()
+    {
+        
+        SendMessageUpwards("ResetItemState", this);
+    }
 }

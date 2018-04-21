@@ -8,6 +8,8 @@ using UnityEngine;
 /// </summary>
 public class InventoryPanelController : MonoBehaviour {
 
+    public static InventoryPanelController Instance;//通过单例传递数据
+
     //持有VM对象.
     private InventoryPanelModel m_InventoryPanelModel;
     private InventoryPanelView m_InventoryPanelView;
@@ -15,6 +17,13 @@ public class InventoryPanelController : MonoBehaviour {
     private int slotNum = 27;
 
     private List<GameObject> slotList = new List<GameObject>();
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+
 
     void Start () {
         m_InventoryPanelView = gameObject.GetComponent<InventoryPanelView>();
@@ -33,12 +42,13 @@ public class InventoryPanelController : MonoBehaviour {
         for(int i = 0; i < slotNum; i++)
         {
             GameObject tempSlot = GameObject.Instantiate<GameObject>(m_InventoryPanelView.Prefab_Slot, m_InventoryPanelView.GetGridTransform);
+            tempSlot.name = "InventorySlot_" + i;
             slotList.Add(tempSlot);
         }
     }
 
     /// <summary>
-    /// 
+    /// 生成全部物品项.
     /// </summary>
     private void CreateAllItem()
     {
@@ -53,7 +63,7 @@ public class InventoryPanelController : MonoBehaviour {
         for (int i = 0; i < tempList.Count; i++)
         {
             GameObject temp = GameObject.Instantiate<GameObject>(m_InventoryPanelView.Prefab_Item, slotList[i].GetComponent<Transform>());
-            temp.GetComponent<InventoryItemController>().InitItem(tempList[i].ItemName, tempList[i].ItemNum);
+            temp.GetComponent<InventoryItemController>().InitItem(tempList[i].ItemId,tempList[i].ItemName, tempList[i].ItemNum);
         }
     }
 
@@ -62,4 +72,34 @@ public class InventoryPanelController : MonoBehaviour {
     void Update () {
 		
 	}
+
+    /// <summary>
+    /// 往背包内填充材料.
+    /// </summary>
+    /// <param name="itemList"></param>
+    public void AddItems(List<GameObject> itemList)
+    {
+        int tempIndex = 0;
+        for (int i = 0; i < slotList.Count; i++)
+        {
+            Transform tempTransform = slotList[i].transform.Find("InventoryItem");
+            //==null 说明是一个空的物品槽.
+            if (tempTransform == null && tempIndex < itemList.Count)   
+            {
+                itemList[tempIndex].transform.SetParent(slotList[i].transform);
+                itemList[tempIndex].GetComponent<InventoryItemController>().InInventory = true;
+                tempIndex++;
+            }
+        }
+    }
+
+    /// <summary>
+    /// 两个C层传数据，降低耦合.
+    /// </summary>
+    /// <param name="item"></param>
+    public void SendDragMaterialsItem(GameObject item)
+    {
+        CraftingPanelController.Instance.DragMaterialsItem(item);
+    }
+
 }

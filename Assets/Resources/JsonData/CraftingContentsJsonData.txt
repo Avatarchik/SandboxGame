@@ -2,26 +2,32 @@
     {
         "Type": [
             {
-                "ItemName": "地基"
+                "ItemID":1,
+				"ItemName": "地基"
             },
             {
-                "ItemName": "墙壁"
+                "ItemID":2,
+				"ItemName": "墙壁"
             },
             {
-                "ItemName": "门"
+                "ItemID":3,
+				"ItemName": "门"
             },
             {
-                "ItemName": "窗户"
+                "ItemID":4,
+				"ItemName": "窗户"
             }
         ]
     },
 	{
         "Type": [
             {
-                "ItemName": "弓箭"
+                "ItemID":11,
+				"ItemName": "弓箭"
             },
             {
-                "ItemName": "长矛"
+                "ItemID":12,
+				"ItemName": "长矛"
             }
         ]
     }

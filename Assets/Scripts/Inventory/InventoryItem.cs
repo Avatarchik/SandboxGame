@@ -7,9 +7,15 @@ using UnityEngine;
 /// </summary>
 public class InventoryItem
 {
-
+    private int itemId;
     private string itemName;
     private int itemNum;
+
+    public int ItemId
+    {
+        get { return itemId; }
+        set { itemId = value; }
+    }
 
     public string ItemName
     {
@@ -24,15 +30,16 @@ public class InventoryItem
     }
 
     public InventoryItem() { }
-    public InventoryItem(string itemName, int itemNum)
+    public InventoryItem(int itemId,string itemName, int itemNum)
     {
-        this.itemName = itemName;
-        this.itemNum = itemNum;
+        this.ItemId = itemId;
+        this.ItemName = itemName;
+        this.ItemNum = itemNum;
     }
 
     public override string ToString()
     {
-        return string.Format("物品名称：{0}，数量：{1}", this.itemName, this.itemNum);
+        return string.Format("物品名称：{0}，数量：{1}, Id：{2}", this.itemName, this.itemNum,this.itemId);
     }
 
 

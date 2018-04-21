@@ -11,7 +11,7 @@ public class InventoryPanelModel : MonoBehaviour
 
     // Use this for initialization
     void Awake()
-    {
+    { 
 
     }
 
@@ -22,6 +22,8 @@ public class InventoryPanelModel : MonoBehaviour
     /// <returns>List对象</returns>
     public List<InventoryItem> GetJsonList(string fileName)
     {
+        return JsonTools.LoadJsonFile<InventoryItem>(fileName);
+        /*
         List<InventoryItem> tempList = new List<InventoryItem>();
         string tempJsonStr = Resources.Load<TextAsset>("JsonData/" + fileName).text;
 
@@ -33,6 +35,7 @@ public class InventoryPanelModel : MonoBehaviour
             tempList.Add(ii);
         }
         return tempList;
+        */
     }
 
     // Update is called once per frame

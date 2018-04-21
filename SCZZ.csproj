@@ -83,19 +83,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Crafting\CraftingContentController.cs" />
+    <Compile Include="Assets\Scripts\Crafting\CraftingContentItem.cs" />
     <Compile Include="Assets\Scripts\Crafting\CraftingContentItemController.cs" />
+    <Compile Include="Assets\Scripts\Crafting\CraftingController.cs" />
+    <Compile Include="Assets\Scripts\Crafting\CraftingMapItem.cs" />
     <Compile Include="Assets\Scripts\Crafting\CraftingPanelController.cs" />
     <Compile Include="Assets\Scripts\Crafting\CraftingPanelModel.cs" />
     <Compile Include="Assets\Scripts\Crafting\CraftingPanelView.cs" />
+    <Compile Include="Assets\Scripts\Crafting\CraftingSlotController.cs" />
     <Compile Include="Assets\Scripts\Crafting\CraftingTabItemController.cs" />
+    <Compile Include="Assets\Scripts\Demo\Demo.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryItemController.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryPanelController.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryPanelModel.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryPanelView.cs" />
+    <Compile Include="Assets\Scripts\Tools\JsonTools.cs" />
+    <Compile Include="Assets\Scripts\Tools\ResourcesTools.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\JsonData\CraftingContentsJsonData.txt" />
+    <None Include="Assets\Resources\JsonData\CraftingMapJsonData.txt" />
     <None Include="Assets\Resources\JsonData\InventoryJsonData.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
