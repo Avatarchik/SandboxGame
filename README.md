@@ -14,3 +14,6 @@
 ![avatar](https://ws1.sinaimg.cn/large/bcd41526ly1fqksobywsnj20ft02faat.jpg)
 ### 切换工具栏
 ![avatar](https://ws1.sinaimg.cn/large/bcd41526ly1fqksolu027g20ws0igwln.jpg)
+
+## FPS模块
+![avatar](https://ws1.sinaimg.cn/large/bcd41526ly1fqlii4enreg20ws0igqvh.jpg)

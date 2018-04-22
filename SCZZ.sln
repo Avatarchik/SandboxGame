@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCZZ", "SCZZ.csproj", "{37BA8B6B-90E6-F369-E1E4-EF413347F5EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCZZ.Plugins", "SCZZ.Plugins.csproj", "{C0602A58-5678-1718-F1D0-DA862B8861F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCZZ.Editor.Plugins", "SCZZ.Editor.Plugins.csproj", "{DECF5825-9358-F283-73E9-CE534A3A5B20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{37BA8B6B-90E6-F369-E1E4-EF413347F5EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37BA8B6B-90E6-F369-E1E4-EF413347F5EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37BA8B6B-90E6-F369-E1E4-EF413347F5EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0602A58-5678-1718-F1D0-DA862B8861F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0602A58-5678-1718-F1D0-DA862B8861F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0602A58-5678-1718-F1D0-DA862B8861F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0602A58-5678-1718-F1D0-DA862B8861F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DECF5825-9358-F283-73E9-CE534A3A5B20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DECF5825-9358-F283-73E9-CE534A3A5B20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DECF5825-9358-F283-73E9-CE534A3A5B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DECF5825-9358-F283-73E9-CE534A3A5B20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
