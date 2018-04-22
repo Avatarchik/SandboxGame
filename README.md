@@ -16,4 +16,4 @@
 ![avatar](https://ws1.sinaimg.cn/large/bcd41526ly1fqksolu027g20ws0igwln.jpg)
 
 ## FPS模块
-![avatar](https://ws1.sinaimg.cn/large/bcd41526ly1fqlii4enreg20ws0igqvh.jpg)
+![avatar](https://ws1.sinaimg.cn/large/bcd41526ly1fqlj7b9z8rj20wf0if1eh.jpg)
