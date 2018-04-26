@@ -34,16 +34,16 @@
 * **建造模式**
 > 按 M 切换成建造模式.（默认）
 
-![avatar](https://files.catbox.moe/2q6b3y.gif)
+![avatar](https://github.com/ayanamirei1997/SandboxGame/Readmeimages/建造.gif)
 
 * **长矛模式**
 > 按 K 切换成长矛模式.（后期完善动画）
 
-![avatar](https://files.catbox.moe/odpfoy.gif)
+![avatar](https://github.com/ayanamirei1997/SandboxGame/Readmeimages/标枪.gif)
 
 * **猎枪模式**
 > 左键点击射击，右键按住进行开镜.
 
-![avatar](https://files.catbox.moe/56o98l.gif)
+![avatar](https://github.com/ayanamirei1997/SandboxGame/Readmeimages/射击.gif)
 ***
 *最新更新于 2018.4.26
