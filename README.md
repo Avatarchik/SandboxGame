@@ -34,18 +34,16 @@
 * **建造模式**
 > 按 M 切换成建造模式.（默认）
 
-![avatar](https://ayanamirei.oss-cn-hangzhou.aliyuncs.com/18-4-23/%E5%BB%BA%E9%80%A0.gif)
+![avatar](https://files.catbox.moe/2q6b3y.gif)
 
 * **长矛模式**
 > 按 K 切换成长矛模式.（后期完善动画）
 
-![avatar](https://ayanamirei.oss-cn-hangzhou.aliyuncs.com/18-4-23/%E6%A0%87%E6%9E%AA.gif
-)
+![avatar](https://files.catbox.moe/odpfoy.gif)
 
 * **猎枪模式**
 > 左键点击射击，右键按住进行开镜.
 
-![avatar](https://ayanamirei.oss-cn-hangzhou.aliyuncs.com/18-4-23/%E5%B0%84%E5%87%BB.gif
-)
+![avatar](https://files.catbox.moe/56o98l.gif)
 ***
-*最新更新于 2018.4.23*
+*最新更新于 2018.4.26
