@@ -92,6 +92,7 @@ public class InventoryPanelController : MonoBehaviour,IUIPanelShowHide {
                 tempIndex++;
             }
         }
+
     }
 
     /// <summary>

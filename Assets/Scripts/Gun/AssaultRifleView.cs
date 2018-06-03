@@ -3,52 +3,66 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public class AssaultRifleView : MonoBehaviour {
-	//组件
-	private Transform m_Transform;
-	private Animator m_Animator;
-	private Camera m_EnvCamera;
+public class AssaultRifleView : GunViewBase {
 
-	//优化开镜动作
-	private Vector3 startPos;
-	private Vector3 startRot;
-	private Vector3 endPos;
-	private Vector3 endRot;
 
-	public Transform M_Transform {
-		get { return m_Transform; }
+	private Transform effectPos;//特效挂点
+	private GameObject bullet;//临时子弹
+	private GameObject shell;//弹壳
+
+	//父物体
+	private Transform effectParent;	//特效父物体
+	private Transform shellParent;	//弹壳父物体
+	
+	public GameObject M_Bullet{
+		get { return bullet; }
 	}
 
-	public Animator M_Animator {
-		get { return m_Animator; }
+	public Transform M_EffectPos{
+		get {return effectPos;}
+	}
+	public GameObject M_Shell{
+		get{return shell;}
 	}
 
-	public Camera M_EnvCamera {
-		get { return m_EnvCamera; }
+	public Transform M_EffectParent{
+		get{ return effectParent; }
+	}
+	public Transform M_ShellParent{
+		get{ return shellParent; }
 	}
 
-	void Awake () {
-		m_Transform = gameObject.GetComponent<Transform> ();
-		m_Animator = gameObject.GetComponent<Animator> ();
-		m_EnvCamera = GameObject.Find ("EnvCamera").GetComponent<Camera> ();
-		//优化开镜
-		startPos = m_Transform.localPosition;
-		startRot = m_Transform.localRotation.eulerAngles;
-		endPos = new Vector3 (-0.065f, -1.85f, 0.25f);
-		endRot = new Vector3 (2.8f, 1.3f, 0.08f);
-	}
+    public override void FindGunPoint()
+    {
+        M_GunPoint = M_Transform.Find("Assault_Rifle/EffectPos_A");
+    }
 
-	//进入开镜--动作优化
-	public void EnterHoldPos () {
-		m_Transform.DOLocalMove (endPos, 0.2f);
-		m_Transform.DOLocalRotate (endRot, 0.2f);
-		m_EnvCamera.DOFieldOfView (40, 0.2f);
-	}
+    public override void InitHoldPoseValue()
+    {
+        //优化开镜
+        M_StartPos = M_Transform.localPosition;
+        M_StartRot = M_Transform.localRotation.eulerAngles;
+        M_EndPos = new Vector3(-0.065f, -1.85f, 0.25f);
+        M_EndRot = new Vector3(2.8f, 1.3f, 0.08f);
+    }
 
-	//退出开镜--动作优化
-	public void ExitHoldPose () {
-		m_Transform.DOLocalMove (startPos, 0.2f);
-		m_Transform.DOLocalRotate (startRot, 0.2f);
-		m_EnvCamera.DOFieldOfView (60, 0.2f);
-	}
+    /*
+    public override void Awake()
+    {
+        base.Awake();
+
+       
+    }*/
+
+    public override void Init()
+    {
+        effectPos = M_Transform.Find("Assault_Rifle/EffectPos_B");
+
+        bullet = Resources.Load<GameObject>("Gun/Bullet");
+        shell = Resources.Load<GameObject>("Gun/Shell");
+
+        effectParent = GameObject.Find("TempObject/AssaultRifle_Effect_Parent").GetComponent<Transform>();
+        shellParent = GameObject.Find("TempObject/AssaultRifle_Shell_Parent").GetComponent<Transform>();
+
+    }
 }

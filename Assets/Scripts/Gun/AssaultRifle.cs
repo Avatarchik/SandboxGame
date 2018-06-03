@@ -5,89 +5,107 @@ using UnityEngine;
 
 
 
-public class AssaultRifle : MonoBehaviour {
+public class AssaultRifle : GunControllerBase {
 
     private AssaultRifleView m_AssaultRifleView;
+    
+    private ObjectPool[] pools;
 
-    //字段
-    private int id; //ID
-    private int damage; //伤害
-    private int durable; //耐久
-    private GunType gunWeaponType;
+    /*
+    public override void Start()
+    {
+        base.Start();
+        //Init();
+    }*/
 
-    private AudioClipLoadType audio; //声音特效
-    private GameObject Effect; //动画特效
+ 
 
-    public int Id {
-        get { return id; }
-        set { id = value; }
-    }
-    public int Damage {
-        get { return damage; }
-        set { damage = value; }
-    }
-    public int Durable {
-        get { return durable; }
-        set { durable = value; }
-    }
-    public GunType GunWeaponType {
-        get { return gunWeaponType; }
-        set { gunWeaponType = value; }
+    public override void PlayEffect () {
+        GunEffect();
+        ShellEffect();
     }
 
-    public AudioClipLoadType Audio {
-        get { return audio; }
-        set { audio = value; }
+    //枪口特效
+    private void GunEffect()
+    {
+        GameObject gunEffect = null;
+        if (pools[0].Data())
+        {
+            gunEffect = pools[0].GetObject();
+            gunEffect.GetComponent<Transform>().position = m_AssaultRifleView.M_GunPoint.position;
+        }
+        else
+        {
+            //Debug.Log ("播放特效");
+            gunEffect = GameObject.Instantiate<GameObject>(Effect, m_AssaultRifleView.M_GunPoint.position, Quaternion.identity, m_AssaultRifleView.M_EffectParent);
+            gunEffect.name = "GunPoint_Effect";
+        }
+        gunEffect.GetComponent<ParticleSystem>().Play();
+        StartCoroutine(Delay(pools[0], gunEffect, 1));
     }
 
-    public GameObject Effect1 {
-        get { return Effect; }
-        set { Effect = value; }
-    }
+    //弹壳特效
+    private void ShellEffect()
+    {
+        //弹壳弹出特效
+        GameObject shell = null;
+        if (pools[1].Data())
+        {
 
-    void Start () {
-        init ();
-    }
-
-    void Update () {
-        MouseControl ();
-    }
-
-    //初始化.
-    private void init () {
-        m_AssaultRifleView = gameObject.GetComponent<AssaultRifleView> ();
-    }
-
-    private void PlayAudio () {
-        Debug.Log ("播放音效");
-    }
-
-    private void PlayEffect () {
-        Debug.Log ("播放特效");
+            shell = pools[1].GetObject();
+            shell.GetComponent<Rigidbody>().isKinematic = true;
+            shell.GetComponent<Transform>().position = m_AssaultRifleView.M_EffectPos.position;
+            shell.GetComponent<Rigidbody>().isKinematic = false;
+        }
+        else
+        {
+            shell = GameObject.Instantiate<GameObject>(m_AssaultRifleView.M_Shell, m_AssaultRifleView.M_EffectPos.position, Quaternion.identity, m_AssaultRifleView.M_ShellParent);
+            shell.name = "Shell";
+        }
+        shell.GetComponent<Rigidbody>().AddForce(m_AssaultRifleView.M_EffectPos.up * 50);
+        StartCoroutine(Delay(pools[1], shell, 3));
     }
 
     //射击
-    private void Shoot () {
-        Debug.Log ("射击");
+    public override void Shoot () {
+        //Debug.Log ("射击");
+        if(Hit.point != Vector3.zero)
+        {
+            if(Hit.collider.GetComponent<BulletMark>()!=null)
+            {
+                Hit.collider.GetComponent<BulletMark>().CreateBulletMark(Hit);
+                Hit.collider.GetComponent<BulletMark>().Hp -= Damage;
+            }
+            else{
+            GameObject.Instantiate<GameObject>(m_AssaultRifleView.M_Bullet, Hit.point, Quaternion.identity);
+            Debug.Log("生成子弹");
+            }
+        }
+        else{
+            Debug.Log("无子弹");
+        }
+
+        //降低耐久
+        Durable--;
     }
 
-    //鼠标控制
-    private void MouseControl () {
-        if (Input.GetMouseButtonDown (0)) //按下鼠标左键->射击.
-        {
-            m_AssaultRifleView.M_Animator.SetTrigger ("Fire");
-        }
-
-        if (Input.GetMouseButton (1)) //按住鼠标右键->开镜  
-        {
-            m_AssaultRifleView.M_Animator.SetBool ("HoldPose", true);
-            m_AssaultRifleView.EnterHoldPos ();
-        }
-        if (Input.GetMouseButtonUp (1)) //松开鼠标右键，退出开镜    
-        {
-            m_AssaultRifleView.M_Animator.SetBool ("HoldPose", false);
-            m_AssaultRifleView.ExitHoldPose ();
-        }
+    public override void LoadAudioAsset()
+    {
+        Audio = Resources.Load<AudioClip>("Audios/Gun/AssaultRifle_Fire");
     }
 
+    public override void LoadEffectAsset()
+    {
+        Effect = Resources.Load<GameObject>("Effects/Gun/AssaultRifle_GunPoint_Effect");
+
+    }
+
+    //初始化
+    public override void Init()
+    {
+        //m_AssaultRifleView = gameObject.GetComponent<AssaultRifleView> ();
+        m_AssaultRifleView = (AssaultRifleView)M_GunViewBase;
+
+        pools = gameObject.GetComponents<ObjectPool>();
+    }
 }

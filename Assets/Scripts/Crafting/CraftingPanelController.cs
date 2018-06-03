@@ -182,18 +182,18 @@ public class CraftingPanelController : MonoBehaviour
     /// </summary>
     private void ResetMaterials()
     {
-        List<GameObject> materialsLisst = new List<GameObject>();
+        List<GameObject> materialsList = new List<GameObject>();
         for (int i = 0; i < slotsList.Count; i++)
         {
             Transform tempTransform = slotsList[i].transform.Find("InventoryItem");
             //有材料就加进去.
             if (tempTransform != null)
             {
-                materialsLisst.Add(tempTransform.gameObject);
+                materialsList.Add(tempTransform.gameObject);
             }
         }
         //Debug.Log(materialsLisst.Count);
-        InventoryPanelController.Instance.AddItems(materialsLisst);//单例 传递给背包 由背包处理
+        InventoryPanelController.Instance.AddItems(materialsList);//单例 传递给背包 由背包处理
     }
 
 

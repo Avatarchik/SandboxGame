@@ -6,3 +6,10 @@ public enum GunType {
 	Shotgun,
 	WoodenBow
 }
+
+//材质枚举
+public enum MaterialType{
+	Metal,
+	Stone,
+	Wood
+}

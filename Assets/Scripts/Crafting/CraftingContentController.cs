@@ -6,7 +6,6 @@ public class CraftingContentController : MonoBehaviour
 {
     private Transform m_Transform;
     private int index = -1;
-
     private CraftingContentItemController current = null;
 
     void Awake()
@@ -21,7 +20,8 @@ public class CraftingContentController : MonoBehaviour
         CreateAllItems(prefab, strList);
     }
 
-    
+  
+
     private void CreateAllItems(GameObject prefab, List<CraftingContentItem> strList)
     {
         for (int i = 0; i < strList.Count; i++)
