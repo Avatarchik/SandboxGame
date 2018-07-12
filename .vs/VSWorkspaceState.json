@@ -3,8 +3,9 @@
     "",
     "\\Assets",
     "\\Assets\\Scripts",
+    "\\Assets\\Scripts\\Const",
     "\\Assets\\Scripts\\Gun"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\Gun\\GunViewBase.cs",
+  "SelectedNode": "\\Assets\\Scripts\\Gun\\BulletBase.cs",
   "PreviewInSolutionExplorer": false
 }

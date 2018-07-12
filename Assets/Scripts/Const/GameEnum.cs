@@ -4,7 +4,8 @@ public enum GunType {
 	HuntingRifle,
 	Revolver,
 	Shotgun,
-	WoodenBow
+	WoodenBow,
+    WoodenSpear
 }
 
 //材质枚举

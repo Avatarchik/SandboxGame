@@ -76,14 +76,21 @@
     <Compile Include="Assets\Scripts\Demo\Gun.cs" />
     <Compile Include="Assets\Scripts\Demo\GunBase.cs" />
     <Compile Include="Assets\Scripts\Demo\IGun.cs" />
+    <Compile Include="Assets\Scripts\Gun\Arrow.cs" />
     <Compile Include="Assets\Scripts\Gun\AssaultRifle.cs" />
     <Compile Include="Assets\Scripts\Gun\AssaultRifleView.cs" />
+    <Compile Include="Assets\Scripts\Gun\BulletBase.cs" />
     <Compile Include="Assets\Scripts\Gun\BulletMark.cs" />
     <Compile Include="Assets\Scripts\Gun\GunControllerBase.cs" />
     <Compile Include="Assets\Scripts\Gun\GunViewBase.cs" />
     <Compile Include="Assets\Scripts\Gun\Shell.cs" />
     <Compile Include="Assets\Scripts\Gun\Shotgun.cs" />
+    <Compile Include="Assets\Scripts\Gun\ShotgunBullet.cs" />
     <Compile Include="Assets\Scripts\Gun\ShotgunView.cs" />
+    <Compile Include="Assets\Scripts\Gun\WoodenBow.cs" />
+    <Compile Include="Assets\Scripts\Gun\WoodenBowView.cs" />
+    <Compile Include="Assets\Scripts\Gun\WoodenSpear.cs" />
+    <Compile Include="Assets\Scripts\Gun\WoodenSpearView.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryItemController.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryPanelController.cs" />
@@ -110,10 +117,10 @@
     <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
     <None Include="Assets\Demigiant\readme_DOTweenPro.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>D:/Project_Unity/SCZZ/SCZZ/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/SCZZ/SCZZ/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/Project_Unity/SCZZ/SCZZ/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/SCZZ/SCZZ/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -311,25 +318,25 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="DemiLib">
-      <HintPath>D:/Project_Unity/SCZZ/SCZZ/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+      <HintPath>C:/SCZZ/SCZZ/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>D:/Project_Unity/SCZZ/SCZZ/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>C:/SCZZ/SCZZ/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="DOTween43">
-      <HintPath>D:/Project_Unity/SCZZ/SCZZ/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+      <HintPath>C:/SCZZ/SCZZ/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
     </Reference>
     <Reference Include="DOTween46">
-      <HintPath>D:/Project_Unity/SCZZ/SCZZ/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
+      <HintPath>C:/SCZZ/SCZZ/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
     </Reference>
     <Reference Include="DOTween50">
-      <HintPath>D:/Project_Unity/SCZZ/SCZZ/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
+      <HintPath>C:/SCZZ/SCZZ/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenPro">
-      <HintPath>D:/Project_Unity/SCZZ/SCZZ/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+      <HintPath>C:/SCZZ/SCZZ/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
-      <HintPath>D:/Project_Unity/SCZZ/SCZZ/Assets/Plugins/LitJson.dll</HintPath>
+      <HintPath>C:/SCZZ/SCZZ/Assets/Plugins/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/wanghaoran/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>

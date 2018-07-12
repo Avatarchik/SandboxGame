@@ -31,25 +31,31 @@
 ### **1、建造**
 > 按 M 切换成建造模式.（默认）
 
-![avatar](./Readmeimages/2.gif)
+![avatar](./Readmeimages/1.gif)
 ### **2、枪械**
 * **长矛**
-> 按 K 切换成长矛模式.（后期完善动画）
+> 按 K 切换成长矛模式.
+> 右键瞄准，左键射击，射出的长矛尾部具有颤动效果.
 
-![avatar](./Readmeimages/1.gif)
-* **猎枪**
-> 左键点击射击，右键按住进行开镜.
+![avatar](./Readmeimages/2.gif)
+* **弓箭**
+> 右键瞄准，左键射击，射出的箭矢尾部具有颤动效果.
 
 ![avatar](./Readmeimages/3.gif)
-* **霰弹枪**
-> 左键点击射击，右键按住进行开镜.
+* **猎枪**
+> 右键瞄准，左键射击，瞄准期间可以连续射击.
 
 ![avatar](./Readmeimages/4.gif)
+* **霰弹枪**
+> 右键瞄准，左键射击，瞄准期间只能射击一次，然后弹出弹壳.
+
+![avatar](./Readmeimages/5.gif)
+
 
 ## **三、环境模块**
 > 环境物体具有hp，受到伤害使hp低于0时将消失。（地图等资源后期再导入）
 
-![avatar](./Readmeimages/5.gif)
+![avatar](./Readmeimages/6.gif)
 ***
 
 *最新更新于 2018.6.3

@@ -7,7 +7,6 @@ using DG.Tweening;
 /// 枪械View层父类
 /// </summary>
 public abstract class GunViewBase : MonoBehaviour {
-
     //基础组件
     private Transform m_Transform;
     private Animator m_Animator;
@@ -85,7 +84,6 @@ public abstract class GunViewBase : MonoBehaviour {
             endRot = value;
         }
     }
-
     public Transform M_Gunstar
     {
         get { return gunStar; }
@@ -110,7 +108,6 @@ public abstract class GunViewBase : MonoBehaviour {
         Init();
     }
 
-
     //进入开镜--动作优化
     public void EnterHoldPose(float time = 0.2f, int fov = 40)
     {
@@ -127,9 +124,12 @@ public abstract class GunViewBase : MonoBehaviour {
         M_EnvCamera.DOFieldOfView(fov, time);
     }
 
+    //初始化枪支相关资源
     public abstract void Init();
+    
     //初始化开镜动作相关的4个字段值
     public abstract void InitHoldPoseValue();
+    
     //查找枪口
     public abstract void FindGunPoint();
 

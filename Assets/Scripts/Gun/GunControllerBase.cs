@@ -182,7 +182,6 @@ public abstract class GunControllerBase : MonoBehaviour {
     public abstract void Shoot();
     public abstract void PlayEffect();
 
-    
     public virtual void Start()
     {
         m_GunViewBase = gameObject.GetComponent<GunViewBase>();
