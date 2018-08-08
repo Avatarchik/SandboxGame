@@ -7,8 +7,8 @@ public class PlayerControlle : MonoBehaviour {
     [SerializeField]
     private Transform m_Transform;
     [SerializeField]
-    private GameObject m_BuildingPlan;  //建造角色
-    private GameObject m_WoodenSpear;   //长矛角色
+    //private GameObject m_BuildingPlan;  //建造角色
+    //private GameObject m_WoodenSpear;   //长矛角色
     //private Animator m_Animator;
 
     private GameObject currentWeapon;   //当前武器
@@ -18,12 +18,12 @@ public class PlayerControlle : MonoBehaviour {
 
 	void Start () {
         m_Transform = gameObject.GetComponent<Transform>();
-        m_BuildingPlan = m_Transform.Find("PersonCamera/Building Plan").gameObject;
-        m_WoodenSpear = m_Transform.Find("PersonCamera/Wooden Spear").gameObject;
+        //m_BuildingPlan = m_Transform.Find("PersonCamera/Building Plan").gameObject;
+        //m_WoodenSpear = m_Transform.Find("PersonCamera/Wooden Spear").gameObject;
 
-        m_WoodenSpear.SetActive(false);
+        //m_WoodenSpear.SetActive(false);
         //m_Animator = m_BuildingPlan.GetComponent<Animator>();
-        currentWeapon = m_BuildingPlan;
+        //currentWeapon = m_BuildingPlan;
         targetWeapon = null;
     }
 	
@@ -31,14 +31,14 @@ public class PlayerControlle : MonoBehaviour {
         //切换到建造
 		if(Input.GetKeyDown(KeyCode.M))
         {
-            targetWeapon = m_BuildingPlan;
+            //targetWeapon = m_BuildingPlan;
             Changed();
 
         }
         //切换到长矛
         if (Input.GetKeyDown(KeyCode.K))
         {
-            targetWeapon = m_WoodenSpear;
+            //targetWeapon = m_WoodenSpear;
             Changed();
 
         }

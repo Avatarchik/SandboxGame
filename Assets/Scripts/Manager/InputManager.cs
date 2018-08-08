@@ -1,22 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
+
 
 public class InputManager : MonoBehaviour {
 
     private bool inventoryState = false;
 
+    private FirstPersonController m_FirstPersonController;
+    //private GunControllerBase m_GunControllerBase;
+    //private GameObject m_GunStar;
 
     void Start()
     {
         //初始隐藏背包.
         InventoryPanelController.Instance.IUIPanelHide();
+        FindInit();
     }
 
     void Update()
     {
         InventoryPanelKey();
-        ToolBarPanelKey();
+        if(inventoryState == false)
+            ToolBarPanelKey();
+
+    }
+
+    private void FindInit()
+    {
+        m_FirstPersonController = GameObject.Find("FPSController").GetComponent<FirstPersonController>();
 
     }
 
@@ -27,20 +40,30 @@ public class InputManager : MonoBehaviour {
     {
         if (Input.GetKeyDown(GameConst.InventoryPAnelKey))
         {
-            if (inventoryState)
+            if (inventoryState) //背包关闭.
             {
                 inventoryState = false;
                 //Debug.Log("隐藏背包");
                 InventoryPanelController.Instance.IUIPanelHide();
+                m_FirstPersonController.enabled = true;
+                //m_GunControllerBase.enabled = true;
+                //m_GunStar.SetActive(true);
+                if(ToolBarPanelController.Instance.CurrentActiveModel != null)
+                    ToolBarPanelController.Instance.CurrentActiveModel.SetActive(true);
             }
-            else
+            else //背包打开.
             {
                 inventoryState = true;
                 //Debug.Log("显示背包");
                 InventoryPanelController.Instance.IUIPanelShow();
+                m_FirstPersonController.enabled = false;
+                //m_GunControllerBase.enabled = false;
+                if (ToolBarPanelController.Instance.CurrentActiveModel != null)
+                    ToolBarPanelController.Instance.CurrentActiveModel.SetActive(false);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                //m_GunStar.SetActive(false);
             }
-
-
         }
     }
 

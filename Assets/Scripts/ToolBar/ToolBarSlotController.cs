@@ -13,6 +13,12 @@ public class ToolBarSlotController : MonoBehaviour {
     private Text m_Text;
 
     private bool selfState = false; //false为默认状态，true为激活状态
+
+    public bool SelfState
+    {
+        get { return selfState; }
+    }
+
     void Awake()
     {
         m_Transform = gameObject.GetComponent<Transform>();

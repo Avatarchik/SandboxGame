@@ -4,8 +4,12 @@
     "\\Assets",
     "\\Assets\\Scripts",
     "\\Assets\\Scripts\\Const",
-    "\\Assets\\Scripts\\Gun"
+    "\\Assets\\Scripts\\Crafting",
+    "\\Assets\\Scripts\\Gun",
+    "\\Assets\\Scripts\\Inventory",
+    "\\Assets\\Scripts\\Manager",
+    "\\Assets\\Scripts\\ToolBar"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\Gun\\BulletBase.cs",
+  "SelectedNode": "\\Assets\\Scripts\\ToolBar\\ToolBarPanelController.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -72,7 +72,7 @@ public class CraftingController : MonoBehaviour {
         item.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 110);
         item.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 110);
 
-        item.GetComponent<InventoryItemController>().InitItem(tempId, tempSpriteNmae, 1);
+        item.GetComponent<InventoryItemController>().InitItem(tempId, tempSpriteNmae, 1, 1);
 
         InitButton();
 

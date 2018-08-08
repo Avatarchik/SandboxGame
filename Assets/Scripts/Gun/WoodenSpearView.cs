@@ -11,17 +11,17 @@ public class WoodenSpearView : GunViewBase
         get { return spear; }
     }
 
-    public override void FindGunPoint()
+    protected override void FindGunPoint()
     {
         M_GunPoint = M_Transform.Find("Armature/Arm_R/Forearm_R/Wrist_R/Weapon/EffectPos_A");
     }
 
-    public override void Init()
+    protected override void Init()
     {
         spear = Resources.Load<GameObject>("Gun/Wooden_Spear");
     }
 
-    public override void InitHoldPoseValue()
+    protected override void InitHoldPoseValue()
     {
         M_StartPos = M_Transform.localPosition;
         M_StartRot = M_Transform.localRotation.eulerAngles;

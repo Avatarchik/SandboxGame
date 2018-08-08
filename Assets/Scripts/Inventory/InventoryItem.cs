@@ -10,6 +10,7 @@ public class InventoryItem
     private int itemId;
     private string itemName;
     private int itemNum;
+    private int itemBar;
 
     public int ItemId
     {
@@ -27,6 +28,12 @@ public class InventoryItem
     {
         get { return itemNum; }
         set { itemNum = value; }
+    }
+
+    public int ItemBar
+    {
+        get { return itemBar; }
+        set { itemBar = value; }
     }
 
     public InventoryItem() { }

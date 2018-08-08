@@ -82,11 +82,14 @@
     <Compile Include="Assets\Scripts\Gun\BulletBase.cs" />
     <Compile Include="Assets\Scripts\Gun\BulletMark.cs" />
     <Compile Include="Assets\Scripts\Gun\GunControllerBase.cs" />
+    <Compile Include="Assets\Scripts\Gun\GunFactory.cs" />
     <Compile Include="Assets\Scripts\Gun\GunViewBase.cs" />
+    <Compile Include="Assets\Scripts\Gun\GunWeaponBase.cs" />
     <Compile Include="Assets\Scripts\Gun\Shell.cs" />
     <Compile Include="Assets\Scripts\Gun\Shotgun.cs" />
     <Compile Include="Assets\Scripts\Gun\ShotgunBullet.cs" />
     <Compile Include="Assets\Scripts\Gun\ShotgunView.cs" />
+    <Compile Include="Assets\Scripts\Gun\ThrowWeaponBase.cs" />
     <Compile Include="Assets\Scripts\Gun\WoodenBow.cs" />
     <Compile Include="Assets\Scripts\Gun\WoodenBowView.cs" />
     <Compile Include="Assets\Scripts\Gun\WoodenSpear.cs" />

@@ -5,22 +5,13 @@ using UnityEngine;
 
 
 
-public class AssaultRifle : GunControllerBase {
+public class AssaultRifle : GunWeaponBase {
 
     private AssaultRifleView m_AssaultRifleView;
     
     private ObjectPool[] pools;
 
-    /*
-    public override void Start()
-    {
-        base.Start();
-        //Init();
-    }*/
-
- 
-
-    public override void PlayEffect () {
+    protected override void PlayEffect () {
         GunEffect();
         ShellEffect();
     }
@@ -47,6 +38,7 @@ public class AssaultRifle : GunControllerBase {
     //弹壳特效
     private void ShellEffect()
     {
+        /*
         //弹壳弹出特效
         GameObject shell = null;
         if (pools[1].Data())
@@ -64,10 +56,11 @@ public class AssaultRifle : GunControllerBase {
         }
         shell.GetComponent<Rigidbody>().AddForce(m_AssaultRifleView.M_EffectPos.up * 50);
         StartCoroutine(Delay(pools[1], shell, 3));
+        */
     }
 
     //射击
-    public override void Shoot () {
+    protected override void Shoot () {
         //Debug.Log ("射击");
         if(Hit.point != Vector3.zero)
         {
@@ -89,19 +82,19 @@ public class AssaultRifle : GunControllerBase {
         Durable--;
     }
 
-    public override void LoadAudioAsset()
+    protected override void LoadAudioAsset()
     {
         Audio = Resources.Load<AudioClip>("Audios/Gun/AssaultRifle_Fire");
     }
 
-    public override void LoadEffectAsset()
+    protected override void LoadEffectAsset()
     {
         Effect = Resources.Load<GameObject>("Effects/Gun/AssaultRifle_GunPoint_Effect");
 
     }
 
     //初始化
-    public override void Init()
+    protected override void Init()
     {
         //m_AssaultRifleView = gameObject.GetComponent<AssaultRifleView> ();
         m_AssaultRifleView = (AssaultRifleView)M_GunViewBase;

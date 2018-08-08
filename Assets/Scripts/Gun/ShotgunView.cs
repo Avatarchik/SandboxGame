@@ -29,7 +29,7 @@ public class ShotgunView : GunViewBase
         }
     }
 
-    public override void Init()
+    protected override void Init()
     {
         effectPos = M_Transform.Find("Armature/Weapon/EffectPos_B");
         effectAudio = Resources.Load<AudioClip>("Audios/Gun/Shotgun_Pump");
@@ -37,7 +37,7 @@ public class ShotgunView : GunViewBase
         bullet = Resources.Load<GameObject>("Gun/Shotgun_Bullet");
     }
 
-    public override void InitHoldPoseValue()
+    protected override void InitHoldPoseValue()
     {
         
         //优化开镜
@@ -51,7 +51,7 @@ public class ShotgunView : GunViewBase
 
     }
 
-    public override void FindGunPoint()
+    protected override void FindGunPoint()
     {
         M_GunPoint = M_Transform.Find("Armature/Weapon/EffectPos_A");
     }

@@ -32,12 +32,12 @@ public class AssaultRifleView : GunViewBase {
 		get{ return shellParent; }
 	}
 
-    public override void FindGunPoint()
+    protected override void FindGunPoint()
     {
         M_GunPoint = M_Transform.Find("Assault_Rifle/EffectPos_A");
     }
 
-    public override void InitHoldPoseValue()
+    protected override void InitHoldPoseValue()
     {
         //优化开镜
         M_StartPos = M_Transform.localPosition;
@@ -54,7 +54,7 @@ public class AssaultRifleView : GunViewBase {
        
     }*/
 
-    public override void Init()
+    protected override void Init()
     {
         effectPos = M_Transform.Find("Assault_Rifle/EffectPos_B");
 

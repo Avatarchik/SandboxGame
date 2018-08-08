@@ -15,7 +15,11 @@ public abstract class GunControllerBase : MonoBehaviour {
     [SerializeField] private int id; //ID
     [SerializeField] private int damage; //伤害
     [SerializeField] private int durable; //耐久
+    private float durable_2;
     [SerializeField] private GunType gunWeaponType;
+
+    //武器对应的Icon
+    private GameObject toolBarIcon;
 
     //特效
     private AudioClip audio; //声音特效
@@ -94,17 +98,29 @@ public abstract class GunControllerBase : MonoBehaviour {
         get { return effect; }
         set { effect = value; }
     }
+    public GameObject ToolBarIcon
+    {
+        get { return toolBarIcon; }
+        set { toolBarIcon = value; }
+    }
     #endregion
 
+
+    private void UpdateUI()
+    {
+        //耐久值
+        toolBarIcon.GetComponent<InventoryItemController>().UpdateUI(Durable / durable_2);
+    }
+
     //播放音效
-    public void PlayAudio()
+    protected void PlayAudio()
     {
         //Debug.Log ("播放音效");
         AudioSource.PlayClipAtPoint(Audio, M_GunViewBase.M_GunPoint.position);
     }
 
     //射击准备
-    public void ShootReady()
+    protected void ShootReady()
     {
         ray = new Ray(M_GunViewBase.M_GunPoint.position, M_GunViewBase.M_GunPoint.forward);
         //Debug.DrawLine(m_AssaultRifleView.M_GunPoint.position, m_AssaultRifleView.M_GunPoint.forward * 500, Color.green);
@@ -124,7 +140,7 @@ public abstract class GunControllerBase : MonoBehaviour {
     }
 
     //协程延迟
-    public IEnumerator Delay(ObjectPool pool, GameObject go, float time)
+    protected IEnumerator Delay(ObjectPool pool, GameObject go, float time)
     {
         yield return new WaitForSeconds(time);
         pool.AddObject(go);
@@ -147,11 +163,12 @@ public abstract class GunControllerBase : MonoBehaviour {
             MouseButtonUp();
         }
     }
-    private void MouseButtonLeftDown()
+    protected virtual void MouseButtonLeftDown()
     {
         Shoot();
+        UpdateUI();
         PlayAudio();
-        PlayEffect();
+
         M_GunViewBase.M_Animator.SetTrigger("Fire");
     }
     private void MouseButtonRightDown()
@@ -167,7 +184,15 @@ public abstract class GunControllerBase : MonoBehaviour {
         M_GunViewBase.M_Gunstar.gameObject.SetActive(true);
     }
 
-    public void CanShoot(int state)
+    public void Holster()
+    {
+        M_GunViewBase.M_Animator.SetTrigger("Holster");
+    }
+
+
+
+
+    protected void CanShoot(int state)
     {
         if (state == 0)
             canShoot = false;
@@ -175,25 +200,25 @@ public abstract class GunControllerBase : MonoBehaviour {
             canShoot = true;
     }
 
-    public abstract void Init();
-    public abstract void LoadAudioAsset();
-    public abstract void LoadEffectAsset();
-
-    public abstract void Shoot();
-    public abstract void PlayEffect();
-
-    public virtual void Start()
+    protected abstract void Init();
+    protected abstract void LoadAudioAsset();
+    protected abstract void Shoot();
+    
+    protected virtual void Start()
     {
+        durable_2 = Durable;
         m_GunViewBase = gameObject.GetComponent<GunViewBase>();
         LoadAudioAsset();
-        LoadEffectAsset();
+
         Init();
     }
 
-    public void Update()
+    void Update()
     {
         ShootReady();
         MouseControl();
     }
+
+    
 
 }

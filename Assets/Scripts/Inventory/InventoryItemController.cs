@@ -15,11 +15,12 @@ public class InventoryItemController : MonoBehaviour,IBeginDragHandler,IDragHand
 
     private Text m_Text;    //物品图标
     private Image m_Image;  //物品数量
+    private Image m_Bar;    //物品血条
     private int id;     //自身id
     private bool isDrag = false;    //自身拖拽状态
     public bool inInventory = true;//当前物品是否在背包内，true在背包,false在合成面板
     private int num = 0;    //物品数量.
-
+    private int bar = 0;    //当前物品是否需要血条.0---不需要  1---需要
 
     private Transform parent;   //物品拖拽过程中父物体
     private Transform self_Parent;//物品自身父物体
@@ -57,6 +58,16 @@ public class InventoryItemController : MonoBehaviour,IBeginDragHandler,IDragHand
         }
     }
 
+    //更新血条
+    public void UpdateUI(float value)
+    {
+        if(value <= 0)
+        {
+            gameObject.GetComponent<Transform>().parent.GetComponent<ToolBarSlotController>().Normal();
+            GameObject.Destroy(gameObject);
+        }
+        m_Bar.fillAmount = value;
+    }
 
     //查找相关的初始化
     private void FindInit()
@@ -66,6 +77,7 @@ public class InventoryItemController : MonoBehaviour,IBeginDragHandler,IDragHand
 
         m_Image = gameObject.GetComponent<Image>();
         m_Text = m_RectTransform.Find("Num").GetComponent<Text>();
+        m_Bar = m_RectTransform.Find("Bar").GetComponent<Image>();
 
         gameObject.name = "InventoryItem";
         parent = GameObject.Find("Canvas").GetComponent<Transform>();
@@ -77,12 +89,22 @@ public class InventoryItemController : MonoBehaviour,IBeginDragHandler,IDragHand
     /// </summary>
     /// <param name="name"></param>
     /// <param name="num"></param>
-    public void InitItem(int id, string name, int num)
+    public void InitItem(int id, string name, int num, int bar)
     {
         this.id = id;
         m_Image.sprite = Resources.Load<Sprite>("Item/" + name);
         this.num = num;
+        this.bar = bar;
         m_Text.text = num.ToString();
+        BarOrNum();
+    }
+
+    private void BarOrNum()
+    {
+        if(bar == 0)
+            m_Bar.gameObject.SetActive(false);
+        else
+            m_Text.gameObject.SetActive(false);
     }
 
     /// <summary>

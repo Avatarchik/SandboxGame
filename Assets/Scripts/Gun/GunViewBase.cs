@@ -18,8 +18,9 @@ public abstract class GunViewBase : MonoBehaviour {
     private Vector3 endPos;
     private Vector3 endRot;
 
-    private Transform gunStar; //准星UI
-    private Transform gunPoint;//枪口
+    private GameObject prefab_Star; //准星UI预制体
+    private Transform gunStar;      //准星UI
+    private Transform gunPoint;     //枪口
 
     //基础组件属性
     public Transform M_Transform
@@ -94,19 +95,45 @@ public abstract class GunViewBase : MonoBehaviour {
         set { gunPoint = value;  }
     }
 
-    public virtual void Awake()
+    protected virtual void Awake()
     {
         //基础组件查找
         m_Transform = gameObject.GetComponent<Transform>();
         m_Animator = gameObject.GetComponent<Animator>();
         m_EnvCamera = GameObject.Find("EnvCamera").GetComponent<Camera>();
-        gunStar = GameObject.Find("GunStar").GetComponent<Transform>();
+
+        //准星
+        prefab_Star = Resources.Load<GameObject>("GunStar");
+        gunStar = GameObject.Instantiate<GameObject>(prefab_Star, GameObject.Find("MainPanel").GetComponent<Transform>()).GetComponent<Transform>();
 
         InitHoldPoseValue();
         FindGunPoint();
-
         Init();
     }
+
+    private void OnEnable()
+    {
+        ShowStar();
+    }
+
+    private void OnDisable()
+    {
+        HideStar();
+    }
+
+    //显示准星UI
+    private void ShowStar()
+    {
+        gunStar.gameObject.SetActive(true);
+    }
+
+    //隐藏准星UI
+    private void HideStar()
+    {
+        if(gunStar != null)
+        gunStar.gameObject.SetActive(false);
+    }
+
 
     //进入开镜--动作优化
     public void EnterHoldPose(float time = 0.2f, int fov = 40)
@@ -125,13 +152,13 @@ public abstract class GunViewBase : MonoBehaviour {
     }
 
     //初始化枪支相关资源
-    public abstract void Init();
-    
+    protected abstract void Init();
+
     //初始化开镜动作相关的4个字段值
-    public abstract void InitHoldPoseValue();
-    
+    protected abstract void InitHoldPoseValue();
+
     //查找枪口
-    public abstract void FindGunPoint();
+    protected abstract void FindGunPoint();
 
 
 }
