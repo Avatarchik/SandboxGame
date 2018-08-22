@@ -62,10 +62,10 @@
     <Compile Include="Assets\Demigiant\DOTweenPro\Editor\DOTweenAnimationInspector.cs" />
     <None Include="Assets\Demigiant\DemiLib\Core\Editor\DemiEditor.xml" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/SCZZ/SCZZ/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>D:/SCZZ/SCZZ/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/SCZZ/SCZZ/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/SCZZ/SCZZ/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -314,34 +314,34 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="DemiLib">
-      <HintPath>C:/SCZZ/SCZZ/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+      <HintPath>D:/SCZZ/SCZZ/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
     </Reference>
     <Reference Include="DemiEditor">
-      <HintPath>C:/SCZZ/SCZZ/Assets/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
+      <HintPath>D:/SCZZ/SCZZ/Assets/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>C:/SCZZ/SCZZ/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>D:/SCZZ/SCZZ/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="DOTween43">
-      <HintPath>C:/SCZZ/SCZZ/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+      <HintPath>D:/SCZZ/SCZZ/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
     </Reference>
     <Reference Include="DOTween46">
-      <HintPath>C:/SCZZ/SCZZ/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
+      <HintPath>D:/SCZZ/SCZZ/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
     </Reference>
     <Reference Include="DOTween50">
-      <HintPath>C:/SCZZ/SCZZ/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
+      <HintPath>D:/SCZZ/SCZZ/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenEditor">
-      <HintPath>C:/SCZZ/SCZZ/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+      <HintPath>D:/SCZZ/SCZZ/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenPro">
-      <HintPath>C:/SCZZ/SCZZ/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+      <HintPath>D:/SCZZ/SCZZ/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenProEditor">
-      <HintPath>C:/SCZZ/SCZZ/Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
+      <HintPath>D:/SCZZ/SCZZ/Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
-      <HintPath>C:/SCZZ/SCZZ/Assets/Plugins/LitJson.dll</HintPath>
+      <HintPath>D:/SCZZ/SCZZ/Assets/Plugins/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>C:/Users/wanghaoran/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.7/Editor/UnityEditor.Advertisements.dll</HintPath>
