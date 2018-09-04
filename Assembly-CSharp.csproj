@@ -76,6 +76,8 @@
     <Compile Include="Assets\Scripts\Demo\Gun.cs" />
     <Compile Include="Assets\Scripts\Demo\GunBase.cs" />
     <Compile Include="Assets\Scripts\Demo\IGun.cs" />
+    <Compile Include="Assets\Scripts\Env\StoneManager.cs" />
+    <Compile Include="Assets\Scripts\Env\TreeManager.cs" />
     <Compile Include="Assets\Scripts\Gun\Arrow.cs" />
     <Compile Include="Assets\Scripts\Gun\AssaultRifle.cs" />
     <Compile Include="Assets\Scripts\Gun\AssaultRifleView.cs" />

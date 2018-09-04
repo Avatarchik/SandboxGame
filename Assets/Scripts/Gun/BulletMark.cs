@@ -65,8 +65,16 @@ public class BulletMark : MonoBehaviour {
 			pool = gameObject.AddComponent<ObjectPool>();
 		else
 			pool = gameObject.GetComponent<ObjectPool>();
-		
-		m_MainTexture = (Texture2D)gameObject.GetComponent<MeshRenderer>().material.mainTexture;
+
+        if (gameObject.name == "Conifer")
+        {
+            m_MainTexture = (Texture2D)gameObject.GetComponent<MeshRenderer>().materials[2].mainTexture;
+        }
+        else
+        {
+            m_MainTexture = (Texture2D)gameObject.GetComponent<MeshRenderer>().material.mainTexture;
+        }
+
 		m_MainTextureBackup = GameObject.Instantiate<Texture2D>(m_MainTexture);
 		bulletMarkQueue = new Queue<Vector2>();
 	}
