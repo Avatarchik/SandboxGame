@@ -28,7 +28,7 @@ public class TreeManager : MonoBehaviour {
 
             float height = Random.Range(0.5f, 1.0f);
             tree.localScale *= height;
-
+            //test
             tree.gameObject.name = "Conifer";
         }
 	}

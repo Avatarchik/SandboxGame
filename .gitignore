@@ -1,0 +1,10 @@
+/.git/
+/.idea/
+/.vscode/
+/Library/
+/obj/
+/Packages/
+/ProjectSettings/
+/Temp/
+*.csproj
+*.meta

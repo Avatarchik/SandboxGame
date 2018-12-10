@@ -24,14 +24,12 @@ public class Arrow : BulletBase
     public override void CollisionEnter(Collision collision)
     {
         M_Rigidbody.Sleep();
-        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Env"))
-        {
-            //Debug.Log("碰到障碍");
-            GameObject.Destroy(M_Rigidbody);
-            GameObject.Destroy(m_BoxCollider);
-            collision.collider.GetComponent<BulletMark>().Hp -= M_Damage;
-            M_Transform.SetParent(collision.collider.gameObject.transform);
-            StartCoroutine("TailAnimation", m_Pivot);
-        }
+        if (collision.collider.gameObject.layer != LayerMask.NameToLayer("Env")) return;
+        //Debug.Log("碰到障碍");
+        GameObject.Destroy(M_Rigidbody);
+        GameObject.Destroy(m_BoxCollider);
+        collision.collider.GetComponent<BulletMark>().Hp -= M_Damage;
+        M_Transform.SetParent(collision.collider.gameObject.transform);
+        StartCoroutine("TailAnimation", m_Pivot);
     }
 } 
