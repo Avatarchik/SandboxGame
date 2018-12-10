@@ -6,5 +6,4 @@
 /Packages/
 /ProjectSettings/
 /Temp/
-*.csproj
-*.meta
+*.meta:
