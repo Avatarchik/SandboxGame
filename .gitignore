@@ -1,9 +1,1 @@
-/.git/
-/.idea/
-/.vscode/
-/Library/
-/obj/
-/Packages/
-/ProjectSettings/
-/Temp/
-*.meta:
+*.meta
