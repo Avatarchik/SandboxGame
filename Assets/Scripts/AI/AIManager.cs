@@ -6,11 +6,10 @@ using UnityEngine;
 
 public enum AIManagerType
 {
-	CANNIBAL,
-	BOAR,
+	CANNIBAL,	//僵尸
+	BOAR,		//小猪
 	NULL
 }
-
 
 public class AIManager : MonoBehaviour
 {
@@ -40,13 +39,14 @@ public class AIManager : MonoBehaviour
 		posTransform = m_Transform.GetComponentsInChildren<Transform>(true);
 		for (int i = 1; i < posTransform.Length; i++)
 		{
+			//存储位置
 			//posQueue.Enqueue(posTransform[i].position);
 			posList.Add(posTransform[i].position);
 		}
-		
 		CreatAIByEnum();
 	}
 
+	//通过枚举创建AI
 	private void CreatAIByEnum()
 	{
 		if (aiManegerType == global::AIManagerType.CANNIBAL)
@@ -58,6 +58,7 @@ public class AIManager : MonoBehaviour
 		}
 	}
 	
+	//AI实例化
 	private void CreatAI(GameObject prefab_AI)
 	{
 		for (int i = 0; i < 5; i++)
@@ -70,16 +71,18 @@ public class AIManager : MonoBehaviour
 		}
 	}
 
+	//销毁AI,短暂延迟后创建新AI
 	private void AIDeath(GameObject ai)
 	{
 		AIList.Remove(ai);
 		StartCoroutine("CreatOneAI");
 	}
 
+	//协程创建新AI
 	private IEnumerator CreatOneAI()
 	{
 		GameObject ai = null;
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(5);	//5秒后创建
 		switch (aiManegerType)
 		{
 			case global::AIManagerType.CANNIBAL:
@@ -94,7 +97,8 @@ public class AIManager : MonoBehaviour
 		{
 			ai.GetComponent<AI>().Dir = posList[index];
 			ai.GetComponent<AI>().PosList = posList;
-
+			
+			//更新AIList
 			index++;
 			index = index % posList.Count();
 			AIList.Add(ai);

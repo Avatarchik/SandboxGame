@@ -6,9 +6,8 @@ public class AIManagers : MonoBehaviour
 {
 
 	private Transform m_Transform;
-	
 	private Transform[] points;
-	// Use this for initialization
+	
 	void Start ()
 	{
 		m_Transform = gameObject.GetComponent<Transform>();
@@ -16,6 +15,7 @@ public class AIManagers : MonoBehaviour
 		CreatAIManager();
 	}
 
+	//给每个位置点添加AI管理器脚本
 	private void CreatAIManager()
 	{
 		for (int i = 1; i < points.Length; i++)
