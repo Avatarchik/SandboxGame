@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\wanghaoran\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\wanghaoran\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_SCZZ.-915433024.00" t="ExcludeRecursive" />
-    <e p="D:\GitHub\SandboxGame" t="IncludeRecursive">
-      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
-      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
-      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
-      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
-      <e p="Library" t="ExcludeRecursive" />
+    <e p="C:\Users\wanghaoran\.Rider2018.2\system\resharper-host\Temp\ReSharperHost\v182\TempCaches\Solution.SCZZ.00" t="ExcludeRecursive" />
+    <e p="D:\GitHub\SandboxGame" t="IncludeFlat">
       <e p="SCZZ.sln" t="IncludeFlat" />
-      <e p="Temp" t="ExcludeRecursive" />
     </e>
   </component>
 </project>
